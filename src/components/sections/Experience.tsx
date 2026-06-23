@@ -58,7 +58,7 @@ export default function Experience() {
 
   return (
     <section id="experience" className="border-t border-border bg-surface/40">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28 lg:px-14">
+      <div className="mx-auto max-w-[1400px] px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-28 lg:px-14">
         <h2 className="font-serif text-2xl text-foreground md:text-3xl">Experience</h2>
 
         <ul className="mx-auto mt-10 max-w-2xl space-y-6 md:mt-12 md:space-y-8">

@@ -1,4 +1,4 @@
-import CurAIDemoEmbed, { CURAI_PHONE_HEIGHT } from "@/components/sections/CurAIDemoEmbed";
+import CurAIDemoEmbed from "@/components/sections/CurAIDemoEmbed";
 import SelectedWorkCards from "@/components/sections/SelectedWorkCards";
 import { GitHubIcon } from "@/components/ui/Icons";
 import { featuredWork, workGallery } from "@/lib/data";
@@ -8,11 +8,8 @@ type ProfessionalItem = WorkItem & { embed?: never };
 
 function CurAIProjectBlock() {
   return (
-    <article className="mx-auto grid w-full max-w-6xl grid-cols-1 items-stretch gap-10 lg:grid-cols-[1fr_320px] lg:gap-12 xl:max-w-7xl">
-      <div
-        className="flex flex-col rounded-xl border border-border bg-surface/50 p-6 md:p-8"
-        style={{ height: CURAI_PHONE_HEIGHT }}
-      >
+    <article className="mx-auto grid w-full max-w-6xl grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[1fr_320px] lg:items-stretch lg:gap-12 xl:max-w-7xl">
+      <div className="order-2 flex flex-col rounded-xl border border-border bg-surface/50 p-5 sm:p-6 md:p-8 lg:order-1 lg:min-h-[640px]">
         <p className="text-xs uppercase tracking-wide text-muted">
           {featuredWork.eyebrow}
         </p>
@@ -66,7 +63,7 @@ function CurAIProjectBlock() {
         </div>
       </div>
 
-      <div className="flex items-start justify-center lg:justify-end">
+      <div className="order-1 flex items-start justify-center lg:order-2 lg:justify-end">
         <CurAIDemoEmbed />
       </div>
     </article>
@@ -82,7 +79,7 @@ export default function WorkGallery() {
   );
 
   return (
-    <section id="work" className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28 lg:px-14">
+    <section id="work" className="mx-auto max-w-[1400px] px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-28 lg:px-14">
       {personal && <CurAIProjectBlock />}
       <SelectedWorkCards items={professional} />
     </section>

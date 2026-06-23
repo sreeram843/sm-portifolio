@@ -18,7 +18,7 @@ export default function FooterLowerSection() {
 
   return (
     <motion.div {...getScrollRevealProps(0, reducedMotion)}>
-      <div className="mt-20 grid gap-16 border-t border-border pt-16 md:mt-28 md:grid-cols-2 md:gap-24">
+      <div className="mt-14 grid gap-12 border-t border-border pt-12 sm:mt-20 sm:gap-16 sm:pt-16 md:mt-28 md:grid-cols-2 md:gap-24">
         <div>
           <p className="mb-6 text-sm text-muted">Credentials</p>
           <ul className="space-y-4">
@@ -57,8 +57,8 @@ export default function FooterLowerSection() {
         </div>
       </div>
 
-      <div className="mt-20 md:mt-28">
-        <p className="font-serif text-2xl leading-snug text-foreground md:text-3xl">
+      <div className="mt-14 sm:mt-20 md:mt-28">
+        <p className="font-serif text-xl leading-snug text-foreground sm:text-2xl md:text-3xl">
           Want to collaborate together?
         </p>
         <p className="mt-3 text-base text-muted">

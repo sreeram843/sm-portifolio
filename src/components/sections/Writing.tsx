@@ -12,7 +12,7 @@ export default function Writing() {
 
   return (
     <section id="writing" className="border-t border-border">
-      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28 lg:px-14">
+      <div className="mx-auto max-w-[1400px] px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-28 lg:px-14">
         <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
           <h2 className="font-serif text-2xl text-foreground md:text-3xl">Writing</h2>
           <a

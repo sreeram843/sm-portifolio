@@ -31,18 +31,21 @@ export default function Hero() {
   const activeWord = profile.rotatingWords[wordIndex];
 
   return (
-    <section className="mx-auto max-w-[1400px] px-6 pb-12 pt-8 md:px-10 md:pb-16 md:pt-12 lg:px-14">
-      <p className="mb-6 text-sm text-muted">
+    <section className="mx-auto max-w-[1400px] px-4 pb-10 pt-6 sm:px-6 sm:pb-12 sm:pt-8 md:px-10 md:pb-16 md:pt-12 lg:px-14">
+      <p className="mb-5 max-w-xl text-sm leading-relaxed text-muted sm:mb-6">
         {profile.title} · {profile.location}
       </p>
 
-      <h1 className="max-w-5xl font-serif text-[2rem] leading-[1.2] tracking-tight text-foreground sm:text-5xl lg:text-[3.25rem] lg:leading-[1.15]">
+      <h1 className="max-w-5xl font-serif text-[1.75rem] leading-[1.22] tracking-tight text-foreground sm:text-[2rem] md:text-5xl md:leading-[1.2] lg:text-[3.25rem] lg:leading-[1.15]">
         {profile.heroLine}{" "}
-        <span className="inline-grid align-bottom">
-          <span className="invisible col-start-1 row-start-1 whitespace-nowrap" aria-hidden>
+        <span className="mt-1 inline-grid align-bottom sm:mt-0">
+          <span
+            className="invisible col-start-1 row-start-1 max-sm:whitespace-normal sm:whitespace-nowrap"
+            aria-hidden
+          >
             {longestRotatingWord}.
           </span>
-          <span className="col-start-1 row-start-1 whitespace-nowrap">
+          <span className="col-start-1 row-start-1 max-sm:whitespace-normal sm:whitespace-nowrap">
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
                 key={activeWord}

@@ -103,7 +103,7 @@ function MetricCell({
       className="relative"
     >
       <motion.p
-        className="font-serif text-3xl tabular-nums text-foreground md:text-4xl"
+        className="font-serif text-2xl tabular-nums text-foreground sm:text-3xl md:text-4xl"
         initial={reducedMotion ? false : { opacity: 0.4 }}
         animate={inView ? { opacity: 1 } : { opacity: 0.4 }}
         transition={{ duration: 0.4, delay: index * 0.14 }}
@@ -140,7 +140,7 @@ export default function ImpactStrip() {
       />
 
       <motion.div
-        className="mx-auto grid max-w-[1400px] grid-cols-2 gap-8 px-6 py-10 md:grid-cols-4 md:px-10 md:py-12 lg:px-14"
+        className="mx-auto grid max-w-[1400px] grid-cols-2 gap-x-4 gap-y-8 px-4 py-8 sm:gap-8 sm:px-6 sm:py-10 md:grid-cols-4 md:px-10 md:py-12 lg:px-14"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"

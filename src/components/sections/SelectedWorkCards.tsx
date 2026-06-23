@@ -11,7 +11,7 @@ export default function SelectedWorkCards({ items }: { items: ProfessionalItem[]
   const reducedMotion = usePrefersReducedMotion();
 
   return (
-    <div className="mt-20 border-t border-border pt-16 md:mt-24 md:pt-20">
+    <div className="mt-14 border-t border-border pt-12 sm:mt-20 sm:pt-16 md:mt-24 md:pt-20">
       <h2 className="mb-8 font-serif text-xl text-foreground md:text-2xl">Selected work</h2>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
         {items.map((item, index) => (
@@ -20,7 +20,7 @@ export default function SelectedWorkCards({ items }: { items: ProfessionalItem[]
               href={item.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full flex-col rounded-xl border border-border bg-surface/50 p-5 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-[3px] hover:border-foreground/20 hover:bg-surface hover:shadow-[0_8px_24px_rgb(26_26_26/0.06)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none md:p-6"
+              className="group flex h-full flex-col rounded-xl border border-border bg-surface/50 p-4 transition-[transform,box-shadow] duration-200 ease-out hover:-translate-y-[3px] hover:border-foreground/20 hover:bg-surface hover:shadow-[0_8px_24px_rgb(26_26_26/0.06)] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none sm:p-5 md:p-6"
             >
               <p className="text-xs uppercase tracking-wide text-muted">{item.subtitle}</p>
               <h3 className="mt-2 font-serif text-lg leading-snug text-foreground">{item.title}</h3>
