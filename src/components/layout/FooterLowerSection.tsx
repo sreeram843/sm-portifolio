@@ -24,7 +24,18 @@ export default function FooterLowerSection() {
           <ul className="space-y-4">
             {certifications.map((cert) => (
               <li key={cert.name}>
-                <p className="text-base text-foreground">{cert.name}</p>
+                {"href" in cert && cert.href ? (
+                  <a
+                    href={cert.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={connectLinkClassName}
+                  >
+                    {cert.name}
+                  </a>
+                ) : (
+                  <p className="text-base text-foreground">{cert.name}</p>
+                )}
                 <p className="text-sm text-muted">
                   {cert.issuer} · {cert.date}
                 </p>

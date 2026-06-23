@@ -314,6 +314,12 @@ export const mediumPosts = [
 
 export const certifications = [
   {
+    name: "IEEE Senior Member",
+    issuer: "IEEE",
+    date: "2025",
+    href: "https://www.ieee.org/membership/senior/",
+  },
+  {
     name: "Azure Solutions Architect Expert",
     issuer: "Microsoft",
     date: "2025–2026",
