@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { animate, motion, useInView } from "framer-motion";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { highlightMetrics } from "@/lib/data";
 
 type MetricAnim = {
@@ -43,19 +44,13 @@ function AnimatedMetricValue({
   reducedMotion: boolean;
 }) {
   const config = metricAnimConfig[value];
-  const [display, setDisplay] = useState(reducedMotion ? config?.to ?? 0 : 0);
+  const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (!config) {
+    if (!config || reducedMotion || !active) {
       return;
     }
 
-    if (reducedMotion || !active) {
-      setDisplay(config.to);
-      return;
-    }
-
-    setDisplay(0);
     const controls = animate(0, config.to, {
       duration: 1.35,
       ease: [0.22, 1, 0.36, 1],
@@ -67,6 +62,16 @@ function AnimatedMetricValue({
 
   if (!config) {
     return <>{value}</>;
+  }
+
+  if (reducedMotion || !active) {
+    return (
+      <>
+        {config.prefix}
+        {config.to}
+        {config.suffix}
+      </>
+    );
   }
 
   return (
@@ -89,11 +94,7 @@ function MetricCell({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-8% 0px" });
-  const [reducedMotion, setReducedMotion] = useState(false);
-
-  useEffect(() => {
-    setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-  }, []);
+  const reducedMotion = usePrefersReducedMotion();
 
   return (
     <motion.div

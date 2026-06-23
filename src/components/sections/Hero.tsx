@@ -2,11 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { profile } from "@/lib/data";
 
 export default function Hero() {
   const [wordIndex, setWordIndex] = useState(0);
-  const [reducedMotion, setReducedMotion] = useState(false);
+  const reducedMotion = usePrefersReducedMotion();
   const longestRotatingWord = useMemo(
     () =>
       profile.rotatingWords.reduce((longest, word) =>
@@ -14,10 +15,6 @@ export default function Hero() {
       ),
     [],
   );
-
-  useEffect(() => {
-    setReducedMotion(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-  }, []);
 
   useEffect(() => {
     if (reducedMotion) {

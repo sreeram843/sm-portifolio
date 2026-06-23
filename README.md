@@ -38,13 +38,27 @@ npm run build
 npm start
 ```
 
-Deploy to [Vercel](https://vercel.com) (recommended):
+### GitHub Actions → Vercel
+
+Pushes to `main` run lint + build first; production deploy runs only if both pass.
+
+Add these **GitHub repository secrets** (`Settings → Secrets and variables → Actions`):
+
+| Secret | Where to get it |
+|---|---|
+| `VERCEL_TOKEN` | [Vercel → Account Settings → Tokens](https://vercel.com/account/tokens) |
+| `VERCEL_ORG_ID` | Vercel project → Settings → General, or run `vercel link` locally and read `.vercel/project.json` |
+| `VERCEL_PROJECT_ID` | Same as above |
+
+Optional env var in Vercel (or in the workflow): `NEXT_PUBLIC_CURAI_DEMO_URL=https://app.cura-i.com/demo`
+
+If Vercel is also connected to GitHub for auto-deploy, disable **Production Auto-Deploy** in the Vercel project to avoid duplicate deployments — let the workflow handle production deploys after quality checks pass.
+
+### Manual deploy
 
 ```bash
-npx vercel
+npx vercel --prod
 ```
-
-Or push to GitHub and connect the repo in Vercel dashboard.
 
 ## Project Structure
 

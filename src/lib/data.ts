@@ -17,9 +17,9 @@ export const profile = {
     "payments just work",
   ],
   pitch:
-    "Engineering lead shipping telehealth platforms for 90M+ members — from real-time scheduling engines to RAG assistants you can talk to today.",
+    "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
   heroStatement:
-    "Sriram Mentey is a Senior Software Engineer & Engineering Lead who builds healthcare systems at scale — from real-time scheduling for 90M+ members to RAG assistants in production.",
+    "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
   about: [
     "Based in Austin, Sriram is an engineering lead with 9+ years building regulated healthcare, financial, and logistics systems. Most recently at Teladoc Health, he built real-time provider availability — slot generation per service line, Redis-backed reads, and predictive scheduling for millions of members — while driving EHR integrations, payments, and platform modernization.",
     "His approach balances architecture and execution, grounded in SLA ownership and close cross-functional collaboration. Above all, he's committed to shipping systems that are reliable under load, compliant in regulated environments, and clear enough for teams to maintain.",

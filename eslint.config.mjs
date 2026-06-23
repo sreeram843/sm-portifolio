@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Legacy 3D hero — not used on the live page
+    "src/components/3d/**",
   ]),
 ]);
 

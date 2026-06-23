@@ -12,10 +12,11 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: "Sriram Mentey — Healthcare Systems Engineer",
   description:
-    "Engineering lead building telehealth at scale. CurAI creator. 90M+ member scheduling platforms, FHIR integrations, AI agents.",
+    "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
   openGraph: {
     title: "Sriram Mentey — Healthcare Systems Engineer",
-    description: "I build systems where healthcare meets scale.",
+    description:
+      "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
     type: "website",
   },
 };
