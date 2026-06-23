@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
+import { profile } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
@@ -9,15 +10,21 @@ const instrumentSerif = Instrument_Serif({
   weight: "400",
 });
 
+const pageTitle = `${profile.name} — ${profile.seoTitle}`;
+const pageDescription = profile.pitch;
+
 export const metadata: Metadata = {
-  title: "Sriram Mentey — Healthcare Systems Engineer",
-  description:
-    "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
+  title: pageTitle,
+  description: pageDescription,
   openGraph: {
-    title: "Sriram Mentey — Healthcare Systems Engineer",
-    description:
-      "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
+    title: pageTitle,
+    description: pageDescription,
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: pageTitle,
+    description: pageDescription,
   },
 };
 

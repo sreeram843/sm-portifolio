@@ -1,6 +1,7 @@
 export const profile = {
   name: "Sriram Mentey",
   title: "Senior Software Engineer & Engineering Lead",
+  seoTitle: "Software Engineer & Engineering Lead",
   location: "Austin, TX",
   phone: "+1 816-605-8945",
   email: "menteysriram43@gmail.com",
