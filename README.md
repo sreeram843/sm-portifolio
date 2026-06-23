@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sriram Mentey — Portfolio
+
+A modern personal portfolio with interactive 3D visuals, built with Next.js and React Three Fiber.
+
+## Tech Stack
+
+| Layer | Choice | Why |
+|-------|--------|-----|
+| **Framework** | Next.js 16 + React 19 + TypeScript | Fast dev, SEO, easy deploy to Vercel |
+| **3D** | React Three Fiber + Three.js | Industry-standard WebGL; great 3D with React DX |
+| **Styling** | Tailwind CSS 4 | Utility-first, responsive, dark theme |
+| **Animation** | Framer Motion | Smooth scroll & entrance animations |
+| **Backend** | None (pilot) | Static site; contact via mailto. Add Resend/Formspree later |
+
+### Why not Rust/WASM for this pilot?
+
+WebAssembly + Rust shines for **compute-heavy** tasks (physics sims, image processing, custom shaders at low level). For portfolio 3D scenes, **React Three Fiber** delivers excellent visuals with faster iteration. WASM can be added later for specific effects if needed.
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build & Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Production build
+npm run build
 
-## Learn More
+# Run production server locally
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Deploy to [Vercel](https://vercel.com) (recommended):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or push to GitHub and connect the repo in Vercel dashboard.
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/              # Next.js app router (layout, page, globals)
+├── components/
+│   ├── 3d/           # Three.js / R3F scenes
+│   ├── layout/       # Navbar, Footer
+│   ├── sections/     # Hero, About, Skills, etc.
+│   └── ui/           # Shared UI primitives
+└── lib/
+    ├── data.ts       # Portfolio content (edit this!)
+    └── utils.ts      # Utilities
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+Edit `src/lib/data.ts` to update your bio, experience, projects, and links.
+
+## Push to Git
+
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/sm-portifolio.git
+git push -u origin main
+```
+
+## License
+
+MIT
