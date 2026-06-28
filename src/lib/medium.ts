@@ -37,8 +37,8 @@ function extractCoverImage(html: string | undefined): string | null {
     return null;
   }
 
-  const urls = [...html.matchAll(/https:\/\/cdn-images-1\.medium\.com[^"'\\s<>]+/g)].map(
-    (match) => match[0],
+  const urls = [...html.matchAll(/https:\/\/cdn-images-1\.medium\.com\/[^\s"'<>]+/g)].map(
+    (match) => match[0].replace(/[),.;]+$/, ""),
   );
 
   if (urls.length === 0) {
