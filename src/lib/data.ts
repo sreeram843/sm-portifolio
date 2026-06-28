@@ -264,7 +264,16 @@ export const craftTags = [
   "RAG",
 ];
 
-export const mediumPosts = [
+export const mediumPostsFallback = [
+  {
+    title: "I Took My Personal AI System to Production. Here's What Shipping Taught Me.",
+    date: "Jun 2026",
+    url: "https://medium.com/@menteysriram43/i-took-my-personal-ai-system-to-production-heres-what-shipping-taught-me-e531b210e2d4",
+    image: "https://cdn-images-1.medium.com/max/1024/1*WM9smE_QmM4jM9SsC9RQpQ.gif",
+    excerpt:
+      "Building the system teaches you the architecture. Shipping it teaches you the system's limits.",
+    featured: true,
+  },
   {
     title: "What Running Out of AI Credits Taught Me About Local Models",
     date: "Jun 2026",
