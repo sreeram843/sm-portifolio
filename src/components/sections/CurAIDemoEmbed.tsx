@@ -14,7 +14,7 @@ export default function CurAIDemoEmbed() {
         <div className="mt-1.5 overflow-hidden rounded-[1.5rem] border border-border bg-background sm:mt-2 sm:rounded-[1.75rem]">
           <iframe
             src={demoUrl}
-            title="CurAI demo — try the assistant"
+            title="CurieAI demo — try the assistant"
             className="block h-[480px] w-full border-0 sm:h-[520px] lg:h-[560px]"
             loading="lazy"
             allow="clipboard-write"

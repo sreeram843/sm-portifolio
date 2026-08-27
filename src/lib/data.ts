@@ -80,10 +80,10 @@ export const impactMoments = [
 
 export const featuredWork = {
   eyebrow: "Personal project",
-  name: "CurAI",
+  name: "CurieAI",
   tagline: "Personal project — live in production at app.cura-i.com",
   description:
-    "A private assistant workspace for grounded chat, document retrieval, and multi-step workflows — named for Marie Curie, blending Curie and AI. I designed and shipped it end-to-end: a multi-user RAG system with smart routing, live data, a tool-calling agent, and multi-agent workflows. Every conversation and document is scoped to your account.",
+    "A private assistant workspace for grounded chat, document retrieval, and multi-step workflows — named for Marie Curie. I designed and shipped it end-to-end: a multi-user RAG system with smart routing, live data, a tool-calling agent, and multi-agent workflows. Every conversation and document is scoped to your account.",
   liveUrl: "https://app.cura-i.com",
   githubUrl: "https://github.com/sreeram843/personal-ai",
   stack: [
@@ -120,9 +120,54 @@ export const featuredWork = {
   ],
 };
 
+export const curieFhir = {
+  eyebrow: "Personal project · Phase 1 MVP",
+  name: "CurieFHIR",
+  tagline: "Open source — HL7 v2 & clinical notes → validated FHIR R4",
+  description:
+    "An LLM pipeline that translates legacy and unstructured clinical data into validated FHIR R4 resources — with a self-correcting validation loop against HAPI FHIR. Built to turn Mirth/HL7 experience into a reproducible, AI-assisted interoperability system.",
+  githubUrl: "https://github.com/sreeram843/curie-fhir",
+  stack: [
+    "Python",
+    "Groq",
+    "Ollama",
+    "Qdrant",
+    "HAPI FHIR",
+    "Mirth Connect",
+    "HL7 v2",
+    "Streamlit",
+  ],
+  pipeline: [
+    { id: "ingest", label: "Ingest", detail: "HL7 v2 · notes" },
+    { id: "classify", label: "Classify", detail: "LLM intent" },
+    { id: "retrieve", label: "Retrieve", detail: "FHIR schema RAG" },
+    { id: "draft", label: "Draft", detail: "generate FHIR" },
+    { id: "validate", label: "Validate", detail: "$validate" },
+    { id: "correct", label: "Correct", detail: "retry · escalate" },
+  ],
+  highlights: [
+    {
+      label: "Ingest & classify",
+      text: "HL7 v2 messages and free-text clinical notes enter the pipeline; an LLM classifies intent before schema retrieval.",
+    },
+    {
+      label: "Schema RAG",
+      text: "Matching FHIR R4 schemas are retrieved from Qdrant so drafting stays grounded in the right resource shapes.",
+    },
+    {
+      label: "Validate & correct",
+      text: "Drafts are checked with $validate against HAPI FHIR; validation errors drive an auto-correction loop, then escalate to human review after repeated failures.",
+    },
+    {
+      label: "Live Mirth path",
+      text: "Optional Mirth Connect channels feed real HL7 v2 traffic into the same pipeline used for fixtures and evaluation.",
+    },
+  ],
+};
+
 export const workGallery = [
   {
-    title: "CurAI",
+    title: "CurieAI",
     subtitle: "Personal project",
     description:
       "Private assistant workspace for grounded chat, document retrieval, and multi-step workflows — multi-user RAG with smart routing, live data, and tool-calling agents.",
@@ -298,7 +343,7 @@ export const mediumPostsFallback = [
     url: "https://medium.com/@menteysriram43/designing-my-own-personal-ai-system-what-building-the-stack-taught-me-b8cc94b3e610",
     image: "https://cdn-images-1.medium.com/max/1024/1*K7wOb6tDebt1i0T3cA9o-w.png",
     excerpt:
-      "What building the CurAI stack taught me about going beyond the chat interface.",
+      "What building the CurieAI stack taught me about going beyond the chat interface.",
     featured: false,
   },
   {

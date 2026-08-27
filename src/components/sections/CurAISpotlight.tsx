@@ -59,7 +59,7 @@ export default function CurAISpotlight() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-salt px-5 py-2.5 text-sm font-semibold text-pepper transition hover:bg-gray-light"
                 >
-                  Open CurAI
+                  Open CurieAI
                   <ArrowUpRight size={14} />
                 </a>
                 <a
