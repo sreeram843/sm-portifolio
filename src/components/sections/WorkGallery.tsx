@@ -4,9 +4,6 @@ import SelectedWorkCards from "@/components/sections/SelectedWorkCards";
 import { GitHubIcon } from "@/components/ui/Icons";
 import { curieFhir, featuredWork, workGallery } from "@/lib/data";
 
-type WorkItem = (typeof workGallery)[number];
-type ProfessionalItem = WorkItem & { embed?: never };
-
 function CurieAIProjectBlock() {
   return (
     <article className="mx-auto grid w-full max-w-6xl grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-[1fr_320px] lg:items-stretch lg:gap-12 xl:max-w-7xl">
@@ -128,15 +125,11 @@ function CurieFhirProjectBlock() {
 }
 
 export default function WorkGallery() {
-  const professional = workGallery.filter(
-    (item): item is ProfessionalItem => !("embed" in item && item.embed),
-  );
-
   return (
     <section id="work" className="mx-auto max-w-[1400px] px-4 py-16 sm:px-6 sm:py-20 md:px-10 md:py-28 lg:px-14">
       <CurieAIProjectBlock />
       <CurieFhirProjectBlock />
-      <SelectedWorkCards items={professional} />
+      <SelectedWorkCards items={workGallery} />
     </section>
   );
 }

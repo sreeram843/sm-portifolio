@@ -5,7 +5,7 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { getScrollRevealProps } from "@/lib/scrollReveal";
 import { workGallery } from "@/lib/data";
 
-type ProfessionalItem = (typeof workGallery)[number] & { embed?: never };
+type ProfessionalItem = (typeof workGallery)[number];
 
 export default function SelectedWorkCards({ items }: { items: ProfessionalItem[] }) {
   const reducedMotion = usePrefersReducedMotion();

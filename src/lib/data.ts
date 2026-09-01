@@ -19,8 +19,6 @@ export const profile = {
   ],
   pitch:
     "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
-  heroStatement:
-    "Engineering lead building event-driven, real-time systems at 90M+ user scale — from low-latency scheduling engines to multi-agent AI assistants in production.",
   about: [
     "Based in Austin, Sriram is an engineering lead with 9+ years building regulated healthcare, financial, and logistics systems. Most recently at Teladoc Health, he built real-time provider availability — slot generation per service line, Redis-backed reads, and predictive scheduling for millions of members — while driving EHR integrations, payments, and platform modernization.",
     "His approach balances architecture and execution, grounded in SLA ownership and close cross-functional collaboration. Above all, he's committed to shipping systems that are reliable under load, compliant in regulated environments, and clear enough for teams to maintain.",
@@ -86,6 +84,8 @@ export const featuredWork = {
     "A private assistant workspace for grounded chat, document retrieval, and multi-step workflows — named for Marie Curie. I designed and shipped it end-to-end: a multi-user RAG system with smart routing, live data, a tool-calling agent, and multi-agent workflows. Every conversation and document is scoped to your account.",
   liveUrl: "https://app.cura-i.com",
   githubUrl: "https://github.com/sreeram843/personal-ai",
+  relatedWritingUrl:
+    "https://medium.com/@menteysriram43/i-took-my-personal-ai-system-to-production-heres-what-shipping-taught-me-e531b210e2d4",
   stack: [
     "FastAPI",
     "PostgreSQL",
@@ -127,6 +127,8 @@ export const curieFhir = {
   description:
     "An LLM pipeline that translates legacy and unstructured clinical data into validated FHIR R4 resources — with a self-correcting validation loop against HAPI FHIR. Built to turn Mirth/HL7 experience into a reproducible, AI-assisted interoperability system.",
   githubUrl: "https://github.com/sreeram843/curie-fhir",
+  relatedWritingUrl:
+    "https://medium.com/@menteysriram43/i-built-an-ai-pipeline-to-translate-legacy-healthcare-data-to-fhir-4b3deb62b9e4",
   stack: [
     "Python",
     "Groq",
@@ -147,18 +149,6 @@ export const curieFhir = {
   ],
   highlights: [
     {
-      label: "Ingest & classify",
-      text: "HL7 v2 messages and free-text clinical notes enter the pipeline; an LLM classifies intent before schema retrieval.",
-    },
-    {
-      label: "Schema RAG",
-      text: "Matching FHIR R4 schemas are retrieved from Qdrant so drafting stays grounded in the right resource shapes.",
-    },
-    {
-      label: "Validate & correct",
-      text: "Drafts are checked with $validate against HAPI FHIR; validation errors drive an auto-correction loop, then escalate to human review after repeated failures.",
-    },
-    {
       label: "Live Mirth path",
       text: "Optional Mirth Connect channels feed real HL7 v2 traffic into the same pipeline used for fixtures and evaluation.",
     },
@@ -166,14 +156,6 @@ export const curieFhir = {
 };
 
 export const workGallery = [
-  {
-    title: "CurieAI",
-    subtitle: "Personal project",
-    description:
-      "Private assistant workspace for grounded chat, document retrieval, and multi-step workflows — multi-user RAG with smart routing, live data, and tool-calling agents.",
-    link: "https://app.cura-i.com",
-    embed: true as const,
-  },
   {
     title: "Real-Time Availability",
     subtitle: "Teladoc · VPC, MH, Nutrition",
