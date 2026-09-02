@@ -1,5 +1,5 @@
 import Parser from "rss-parser";
-import { curieFhir, featuredWork, mediumPostsFallback, profile } from "@/lib/data";
+import { mediumPostsFallback, profile } from "@/lib/data";
 
 export type MediumPost = {
   title: string;
@@ -9,7 +9,7 @@ export type MediumPost = {
 };
 
 const MEDIUM_FEED_URL = `${profile.medium.replace(/\/$/, "")}/feed`;
-const REVALIDATE_SECONDS = 86_400;
+const REVALIDATE_SECONDS = 3_600;
 
 const parser = new Parser({
   customFields: {
@@ -20,12 +20,6 @@ const parser = new Parser({
 function cleanMediumUrl(url: string): string {
   return url.split("?")[0] ?? url;
 }
-
-const EXCLUDED_WRITING_URLS = new Set(
-  [featuredWork.relatedWritingUrl, curieFhir.relatedWritingUrl]
-    .filter((url): url is string => Boolean(url))
-    .map(cleanMediumUrl),
-);
 
 function formatMediumDate(pubDate: string | undefined): string {
   if (!pubDate) {
@@ -88,7 +82,6 @@ export async function getMediumPosts(limit = 4): Promise<MediumPost[]> {
     const posts = (feed.items ?? [])
       .map((item) => mapFeedItem(item as Parser.Item & { contentEncoded?: string }))
       .filter((post): post is MediumPost => post !== null)
-      .filter((post) => !EXCLUDED_WRITING_URLS.has(post.url))
       .slice(0, limit);
 
     if (posts.length === 0) {
@@ -97,14 +90,11 @@ export async function getMediumPosts(limit = 4): Promise<MediumPost[]> {
 
     return posts;
   } catch {
-    return mediumPostsFallback
-      .filter((post) => !EXCLUDED_WRITING_URLS.has(cleanMediumUrl(post.url)))
-      .slice(0, limit)
-      .map(({ title, date, url, image }) => ({
-        title,
-        date,
-        url,
-        image,
-      }));
+    return mediumPostsFallback.slice(0, limit).map(({ title, date, url, image }) => ({
+      title,
+      date,
+      url,
+      image,
+    }));
   }
 }

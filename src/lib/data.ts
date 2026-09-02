@@ -84,8 +84,6 @@ export const featuredWork = {
     "A private assistant workspace for grounded chat, document retrieval, and multi-step workflows — named for Marie Curie. I designed and shipped it end-to-end: a multi-user RAG system with smart routing, live data, a tool-calling agent, and multi-agent workflows. Every conversation and document is scoped to your account.",
   liveUrl: "https://app.cura-i.com",
   githubUrl: "https://github.com/sreeram843/personal-ai",
-  relatedWritingUrl:
-    "https://medium.com/@menteysriram43/i-took-my-personal-ai-system-to-production-heres-what-shipping-taught-me-e531b210e2d4",
   stack: [
     "FastAPI",
     "PostgreSQL",
@@ -127,8 +125,6 @@ export const curieFhir = {
   description:
     "An LLM pipeline that translates legacy and unstructured clinical data into validated FHIR R4 resources — with a self-correcting validation loop against HAPI FHIR. Built to turn Mirth/HL7 experience into a reproducible, AI-assisted interoperability system.",
   githubUrl: "https://github.com/sreeram843/curie-fhir",
-  relatedWritingUrl:
-    "https://medium.com/@menteysriram43/i-built-an-ai-pipeline-to-translate-legacy-healthcare-data-to-fhir-4b3deb62b9e4",
   stack: [
     "Python",
     "Groq",
